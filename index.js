@@ -25,7 +25,7 @@ const userRoutes = require('./routes/user');
 const DbUrl = process.env.DB_URL;
 const dbUrl = "mongodb://127.0.0.1:27017/CampGrounds";
 const MongoStore = require('connect-mongo');
-mongoose.connect(DbUrl)
+mongoose.connect(dbUrl)
 .then(() => {
     console.log('mongo open bitch!')
 })
