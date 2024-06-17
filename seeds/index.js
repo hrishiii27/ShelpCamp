@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const cities = require('./cities');
 const { places , descriptors } = require('./seedHelp');
 const Campground = require('../models/campgrounds');
-const accessKey = 'HmQCGq3GJ9Jbq-KfpDLEbb1TYFlajHwjeHoq96nQ-Pg';
+const accessKey = process.env.UNSPLASH_KEY
 
 
 mongoose.connect('mongodb://127.0.0.1:27017/CampGrounds')
