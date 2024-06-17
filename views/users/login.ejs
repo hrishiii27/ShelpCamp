@@ -1,0 +1,26 @@
+<% layout('layouts/boiler') %>
+<link rel="stylesheet" href="/CSS/login.css">
+    <div class="login-container col-6 offset-4">
+        <h1 class="text-center">Login</h1>
+        <form action="/login" class="validate-form" novalidate method="post">
+            <div class="mb-3">
+                <label class="form-label" for="username">Enter Username</label>
+                <input class="form-control" type="text" id="username" name="username" required>
+                <div class="valid-feedback">
+                    Looks Great!
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="password">Enter Password</label>
+                <input class="form-control" type="password" id="password" name="password" required>
+                <div class="valid-feedback">
+                    Looks Great!
+                </div>
+            </div>
+            <div class="d-grid">
+                <button class="btn btn-success btn-block">Login</button>
+            </div>
+        </form>
+    </div>
+
+
