@@ -12,12 +12,9 @@ module.exports.renderNewForm = async (req, res) => {
 }
 
 module.exports.createCampground = async (req, res, next) => {
-    const locationCords = await axios.get(`https://api.geoapify.com/v1/geocode/search?text=${req.body.campground.location}&apiKey=${process.env.GEO_API}`)
-    const {features: [{geometry}]} = locationCords.data;
     const newCamp = new Campground(req.body.campground);
     newCamp.images = req.files.map(f => ({ url: f.path, filename: f.filename}));
     newCamp.author = req.user._id;
-    newCamp.geometry = geometry;
     await newCamp.save();
     console.log(newCamp);
     req.flash('success', 'New Campground created successfully');
@@ -46,12 +43,9 @@ module.exports.renderEditForm = async (req, res) => {
 
 module.exports.editCampground = async (req, res) => {
     const { id } = req.params;
-    const locationCords = await axios.get(`https://api.geoapify.com/v1/geocode/search?text=${req.body.campground.location}&apiKey=${process.env.GEO_API}`)
-    const {features: [{geometry}]} = locationCords.data;
     const foundCamp = await Campground.findByIdAndUpdate(id, { ...req.body.campground }, {new: true});
     const imgs = req.files.map(f => ({ url: f.path, filename: f.filename}));
     foundCamp.images.push(...imgs);
-    foundCamp.geometry = geometry;
     await foundCamp.save();
     if(req.body.deleteImgs){
         for(let fname of req.body.deleteImgs){
