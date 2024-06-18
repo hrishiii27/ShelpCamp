@@ -9,7 +9,6 @@ Welcome to **ShelpCamp** – your ultimate online hub for discovering and sharin
 - [Usage](#usage)
 - [Database Seeding](#database-seeding)
 - [Contributing](#contributing)
-- [License](#license)
 
 ## Features
 - **View Campgrounds**: Browse a list of all campgrounds.
