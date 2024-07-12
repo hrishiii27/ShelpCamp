@@ -1,6 +1,5 @@
-if(process.env.NODE_ENV !== 'production'){
-    require('dotenv').config();
-}
+require('dotenv').config();
+
 
 const express = require('express');
 const app = express();
@@ -25,7 +24,8 @@ const userRoutes = require('./routes/user');
 const DbUrl = process.env.DB_URL;
 const dbUrl = "mongodb://127.0.0.1:27017/CampGrounds";
 const MongoStore = require('connect-mongo');
-mongoose.connect(dbUrl)
+
+mongoose.connect(DbUrl)
 .then(() => {
     console.log('mongo open bitch!')
 })
@@ -45,7 +45,7 @@ app.use(Helmet({contentSecurityPolicy: false}));
 app.use(express.static(path.join(__dirname, 'public')));
 
 const store = MongoStore.create({
-    mongoUrl: dbUrl,
+    mongoUrl: DbUrl,
     touchAfter: 24 * 60 * 60,
     crypto: {
         secret: 'secretsshouldnotbelikethis'
