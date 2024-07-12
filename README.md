@@ -2,6 +2,9 @@
 
 Welcome to **ShelpCamp** – your ultimate online hub for discovering and sharing the best campgrounds around the world! Whether you're an avid camper looking for new adventures or a campground owner wanting to showcase your site, ShelpCamp provides a seamless experience with user authentication, dynamic campground listings, and robust review features. We've integrated the latest technologies to ensure a smooth and visually appealing experience for all users.
 
+**The website is now live at https://shelpcamp.onrender.com**
+Have used Render for the deployment process, feel free to play around with the site and explore its features cheers!!!!
+
 **Also the whole code is on the "master" branch. Download and try it on your machine locally by following the steps mentioned in the [Installation and Running code](#installation) section.**
 
 ## Table of Contents
